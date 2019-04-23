@@ -1,5 +1,7 @@
 {
   "name": "ionicUdemyFotogram",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
