@@ -9,7 +9,7 @@ export class AvatarSelectorComponent implements OnInit {
   @Output() avatarSel = new EventEmitter<string>();
   @Input() avatarActual = 'av-1.png';
   avatarSlide = {
-    slidesPerView: 3.5
+    slidesPerView: 3.5,
   }
 
   avatars = [

@@ -9,9 +9,15 @@
     </ion-label>
   </ion-item>
 
-  <ion-slides pager="true">
-   
+  <ion-slides pager="true" *ngIf="post.imgs.length > 1">
+    <ion-slide *ngFor="let img of post.imgs" class="image-slide" [style]="(img | image: post.usuario._id) | domSanitizer"></ion-slide>
   </ion-slides>
+
+  <ion-slides *ngIf="post.imgs.length === 1" [options]="slideSoloOpts">
+    <ion-slide class="image-slide" [style]="(post.imgs[0] | image: post.usuario._id) | domSanitizer"></ion-slide>
+  </ion-slides>
+
+  <app-mapa [coords]="post.coords" *ngIf="post.coords"></app-mapa>
 
   <ion-item lines="none">
     <ion-icon slot="start" name="heart-empty"></ion-icon>
